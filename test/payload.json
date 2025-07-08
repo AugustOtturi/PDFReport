@@ -1,0 +1,71 @@
+{
+  "rows": [
+    {
+      "Reserva": "Richardson Coimbra Borges X5",
+      "Fecha": "16/07 al 23/07",
+      "CobroNeto": 626.23,
+      "ComisionAirbnb": 24.21,
+      "Huespedes": 1,
+      "Noches": 7
+    },
+    {
+      "Reserva": "Kassia Tomaz X2",
+      "Fecha": "29/07 al 31/07",
+      "CobroNeto": 150.4,
+      "ComisionAirbnb": 6.17,
+      "Huespedes": 2,
+      "Noches": 2
+    },
+    {
+      "Reserva": "Jeferson Luis Bittencourt X2",
+      "Fecha": "05/07 al 06/07",
+      "CobroNeto": 88,
+      "ComisionAirbnb": 4.05,
+      "Huespedes": 2,
+      "Noches": 1
+    },
+    {
+      "Reserva": "Maria Hernandez X2",
+      "Fecha": "07/07 al 13/07",
+      "CobroNeto": 506.4,
+      "ComisionAirbnb": 19.89,
+      "Huespedes": 2,
+      "Noches": 6
+    },
+    {
+      "Reserva": "Lucía Martínez X3",
+      "Fecha": "13/07 al 16/07",
+      "CobroNeto": 132,
+      "ComisionAirbnb": 5.85,
+      "Huespedes": 3,
+      "Noches": 3
+    },
+    {
+      "Reserva": "Julian Florez X3",
+      "Fecha": "02/07 al 04/07",
+      "CobroNeto": 96,
+      "ComisionAirbnb": 4.27,
+      "Huespedes": 3,
+      "Noches": 2
+    },
+    {
+      "Reserva": "Karen Baker X3",
+      "Fecha": "04/07 al 05/07",
+      "CobroNeto": 64,
+      "ComisionAirbnb": 3.15,
+      "Huespedes": 3,
+      "Noches": 1
+    },
+    {
+      "Reserva": "Josefina X2",
+      "Fecha": "23/07 al 29/07",
+      "CobroNeto": 322.58,
+      "ComisionAirbnb": 12.47,
+      "Huespedes": 2,
+      "Noches": 6
+    }
+  ],
+  "fechaReporte": "07/2025",
+  "nombreDueno": "Miguel",
+  "puntuacionAirbnb": 4.8
+}
