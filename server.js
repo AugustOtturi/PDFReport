@@ -1,6 +1,7 @@
 import express from "express";
 import basicAuth from "express-basic-auth";
 import helmet from "helmet";
+import cors from "cors";
 import fs from "fs/promises";
 import path from "path";
 import handlebars from "handlebars";
@@ -53,19 +54,17 @@ function prepareData(data) {
 
   // 2) Totales globales
   const totalNoches = data.rows.reduce((sum, r) => sum + r.Noches, 0);
-  const totalGananciaNeta = data.rows.reduce((sum, r) => sum + r.CobroNeto, 0);
   const totalCobroNeto = data.rows.reduce((sum, r) => sum + r.CobroNeto, 0);
 
-  // 3) Promedio de noches **por reserva**, redondeado
+  // 3) Promedio de noches por reserva, redondeado
   const promedioNoches =
     data.rows.length > 0 ? Math.round(totalNoches / data.rows.length) : 0;
 
   return {
     ...data,
     nochesReservadas: totalNoches,
-    promedioNoches, // entero: noches promedio por reserva
+    promedioNoches,
     gananciaNetaTotal: Number(totalCobroNeto.toFixed(2)),
-    // (si tú aún quieres la comisión total)
     ComisionAirbnbTotal: Number(
       data.rows.reduce((s, r) => s + r.ComisionAirbnb, 0).toFixed(2)
     ),
@@ -91,7 +90,7 @@ const ReportSchema = z.object({
 (async () => {
   // precarga template y logo
   const tplHtml = await fs.readFile(
-    path.resolve("templates/report.html"),
+    path.resolve("Views/layouts/pdf.handlebars"),
     "utf8"
   );
   const template = handlebars.compile(tplHtml);
@@ -111,6 +110,7 @@ const ReportSchema = z.object({
   });
 
   const app = express();
+  app.use(cors());
   app.use(express.json({ limit: "20mb" }));
   app.use(helmet());
   app.use(basicAuth({ users: { [AUTH_USER]: AUTH_PASS }, challenge: true }));
